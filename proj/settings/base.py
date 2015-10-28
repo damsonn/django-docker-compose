@@ -258,15 +258,6 @@ ALLOWED_HOSTS = []
 # This is good to use in production, and on services that support it such as Heroku.
 #SECRET_KEY = get_env_setting('SECRET_KEY')
 
-# Uncomment these to activate and customize Celery:
-# CELERY_ALWAYS_EAGER = False  # required to activate celeryd
-# BROKER_HOST = 'localhost'
-# BROKER_PORT = 5672
-# BROKER_USER = 'django'
-# BROKER_PASSWORD = 'django'
-# BROKER_VHOST = 'django'
-# CELERY_RESULT_BACKEND = 'amqp'
-
 INTERNAL_IPS = ('127.0.0.1')
 
 # Enable this option for memcached

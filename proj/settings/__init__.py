@@ -1,4 +1,4 @@
-""" Settings for camper """
+""" Settings for proj """
 
 from .base import *
 try:

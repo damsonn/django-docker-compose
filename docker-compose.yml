@@ -1,0 +1,32 @@
+db:
+  image: postgres
+  env_file: secrets.env
+  # TODO mount volume - PGDATA or /var/lib/postgresql/data
+rabbitmq:
+  image: rabbitmq
+  env_file: secrets.env
+worker: &app_base
+  build: .
+  restart: always
+  command: celery -A proj worker -l info
+  links:
+    - db
+    - rabbitmq
+  env_file: secrets.env
+  environment:
+    - C_FORCE_ROOT=true
+app:
+  <<: *app_base
+  command: gunicorn -w 3 -b 0.0.0.0 proj.wsgi
+  volumes:
+    - /code/static
+  ports:
+    - "8000:8000"
+nginx:
+  build: nginx
+  ports:
+    - "80:80"
+  links:
+    - app
+  volumes_from:
+    - app

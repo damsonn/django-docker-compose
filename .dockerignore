@@ -1,0 +1,11 @@
+# Django stuff:
+*.log
+
+# PyBuilder
+target/
+
+# local settings
+proj/settings/local.py
+secrets.env
+
+db/development.sqlite3
