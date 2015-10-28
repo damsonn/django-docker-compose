@@ -7,6 +7,15 @@ Django>=1.8
 # App server
 gunicorn
 
+# Security
+bleach
+
+# Templates
+django_compressor
+
+# Admin
+django-debug-toolbar
+
 # Celery: Message queue
 celery
 django-celery

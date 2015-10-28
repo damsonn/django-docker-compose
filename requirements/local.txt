@@ -2,3 +2,12 @@
 # needed to run the site, it belongs in requirements/production.txt. If it's a
 # package for developers (testing, docs, etc.), it goes in this file.
 -r production.txt
+
+# Testing
+nose
+mock
+django-nose
+coverage
+pep8
+pyflakes
+pylint
